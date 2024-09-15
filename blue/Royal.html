@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Estates</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS styles will be added here */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #e6f2ff;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            color: aqua;
+        }
+
+        .link:hover {
+            color: rgb(144, 172, 209);
+        }
+
+        /* Header styles */
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .play-button {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .play-button i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .auth-buttons button {
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-color: #e6f2ff;
+            padding: 4rem 0;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-buttons button {
+            background-color: #007bff;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .heroreverse p h1 {
+            order: 1;
+            flex: -1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .end {
+            
+            text-align: left;
+        }
+
+
+        /* Statistics section styles */
+
+        .container img {
+            border-radius: 10px;
+        }
+
+        .statistics {
+            background-color: rgb(4, 4, 75);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .stat-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services section styles */
+        .services {
+            padding: 4rem 0;
+            background-color: #e6f2ff;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        .service-container,
+        .b-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .service-item,
+        .b-item {
+            flex-basis: calc(25% - 2rem);
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0056b3;
+        }
+
+        .services,
+        .mansion,
+        .for {
+            padding: 4rem, 0;
+        }
+
+        .mansion {
+            background-color: #cce5ff;
+        }
+
+        .for {
+            background-color: #b3d9ff;
+        }
+
+        .service-item img,
+        .b-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .item-content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /*Testimonial section style*/
+        .testimonials {
+            background-color: #f0f8ff;
+            padding: 8px 0;
+        }
+
+        .service-item h3,
+        .b-item h3 {
+            margin-bottom: 0.5rem;
+            color: #0056b3;
+        }
+
+        .service-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial__card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial__card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .author-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 15%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .testimnial__author {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+
+        .testimnial__text {
+            font-size: 16px;
+            color: #555;
+        }
+
+
+        /* Add more styles for other sections... */
+
+        footer {
+            background-color: #0056b3;
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex-basis: 30%;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-right: 1rem;
+        }
+
+        /*@media (max-width: 1024px) {
+
+            .service-item,
+            .b-item {
+                flex-basis: calc(33% - 2rem)
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero .container {
+                flex-direction: column;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .hero-image,
+            .part-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+
+            .service-item,
+            .b-item {
+                flex-basis: calc(50% - 2rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .service-item,
+            .b-item {
+                flex-basis: 100%;
+            }
+        }*/
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo"><img
+                    src="https://cdn.vectorstock.com/i/2000v/67/73/royal-estate-logo-vector-33226773.avif"
+                    alt="Royal Estate Logo">Royal Estates</div>
+            <div class="nav-links">
+                <a href="#home" class="link">Home</a>
+                <a href="#about" class="link">About</a>
+                <a href="#services" class="link">Services</a>
+                <a href="#contact" class="link">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <button>Login</button>
+                <button>Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero reverse" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Find Your <strong>Dream Estate</strong></h1>
+                    <p>Discover luxury properties and prime real estate investments with Royal Estates.</p>
+                    <div class="hero-buttons">
+                        <a href="" class="btn btn-primary"><button>Sign Up</button></a>
+                        <a href="" class="btn btn-primary"><button>Buy Now</button></a>
+                        <a href="" class="btn btn-secondary"><button>Play Video</button></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://img.freepik.com/free-photo/3d-house-model-with-modern-architecture_23-2151004062.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                        alt="Luxury Estate">
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics" id="about">
+            <div class="container">
+                <div class="stat-container">
+                    <div class="stat-item">
+                        <h3>30</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>Clients Served</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1200+</h3>
+                        <p>Estates Sold</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>850+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-container">
+                    <div class="service-item">
+                        <img src="https://img.freepik.com/free-photo/real-estate-sales-manager-giving-keys-customer-after-signing-rental-lease-contract-sale-purchase-agreement_1150-15024.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="Someone handing over keys to a house">
+                        <div class="item-content">
+                            <h3>Property Sales</h3>
+                            <p>Find your perfect property with our expert sales team.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="https://images.pexels.com/photos/8963081/pexels-photo-8963081.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="a house with a rent sign">
+                        <div class="item-content">
+                            <h3>Rentals</h3>
+                            <p>Explore our wide range of rental properties.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="https://img.freepik.com/free-photo/hands-agent-client-shaking-hands-after-signed-contract-buy-new-apartment_1150-14836.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="Our agent shaking hands with a customer on agreement">
+                        <div class="item-content">
+                            <h3>Property Management</h3>
+                            <p>Let us manage your property investments efficiently.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <img src="https://img.freepik.com/free-photo/house-model-compass-plan-background-real-estate-concept_1423-179.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="A white sheet with analysis">
+                        <div class="item-content"></div>
+                        <h3>Market Analysis</h3>
+                        <p>Get insights on the real estate market trends.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="mansion b">
+            <div class="container">
+                <h2>Our Mansions</h2>
+                <div class="b-container">
+                    <div class="b-item">
+                        <img src="https://img.freepik.com/free-photo/beautiful-streets-switzerland_8353-9666.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="colonial mansion">
+                        <div class="item-content">
+                            <h3>Colonial Mansions</h3>
+                        </div>
+                    </div>
+                    <div class="b-item">
+                        <img src="https://www.incubar.net/wp-content/uploads/221208.055-2.jpg" alt="gothic mansion">
+                        <div class="item-content">
+                            <h3>Gothic Mansion</h3>
+                        </div>
+                    </div>
+                    <div class="b-item">
+                        <img src="https://www.incubar.net/wp-content/uploads/221208.055-5.jpg"
+                            alt="mediterranean mansion">
+                        <div class="item-content">
+                            <h3>Mediterranean Mansion</h3>
+                        </div>
+                    </div>
+                    <div class="b-item">
+                        <img src="https://www.incubar.net/wp-content/uploads/221208.055-7.jpg" alt="modern mansion">
+                        <div class="item-content">
+                            <h3>Modern Mansion</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="for b">
+            <div class="container">
+                <h2>Are You Looking For</h2>
+                <div class="b-container">
+                    <div class="b-item">
+                        <img src="https://img.freepik.com/free-photo/analog-landscape-city-with-buildings_23-2149661456.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="precius appartments">
+                        <div class="item-content">
+                            <h3>Apartment</h3>
+                        </div>
+                    </div>
+                    <div class="b-item">
+                        <img src="https://t3.ftcdn.net/jpg/00/29/13/38/240_F_29133877_bfA2n7cWV53fto2BomyZ6pyRujJTBwjd.jpg"
+                            alt="wonderful hotel">
+                        <div class="item-content">
+                            <h3>Hotel</h3>
+                        </div>
+                    </div>
+                    <div class="b-item">
+                        <img src="https://img.freepik.com/premium-photo/big-american-house-architecture-building-suburb_53876-258704.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="amazing detached home">
+                        <div class="item-content">
+                            <h3>Detached Home</h3>
+                        </div>
+                    </div>
+                    <div class="b-item">
+                        <img src="https://img.freepik.com/free-photo/aerial-shot-farmland-clear-sky-eifel-region-germany_181624-26567.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="extensive beautiful land">
+                        <div class="item-content">
+                            <h3>Land</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Start your journey to luxury.</h1>
+                    <p>Discover Your Dream Property with Royal Estates! Whether you're looking for a luxurious mansion,
+                        a prime city apartment, or a sprawling countryside estate, we offer an exclusive selection of
+                        high-value properties designed to elevate your lifestyle. Explore our collection of premium
+                        estates and invest in your future today.</p>
+                    <div class="hero-buttons">
+                        <a href="" class="btn btn-primary"><button>Buy Now</button></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://img.freepik.com/free-photo/analog-landscape-city-with-buildings_23-2149661455.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                        alt="Luxury Estate">
+                </div>
+            </div>
+        </section>
+
+        <section class="heroreverse" id="heroreverse"></section>
+        <div class="container">
+            <div class="heroreverse-content">
+                <div class="heroreverse-image">
+                    <img src="https://img.freepik.com/free-photo/side-view-young-friends-traveling-together_23-2150598887.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                        alt="Luxury Estate">
+                </div>
+                <div class="heroreverse end"><h1>Take the first step to securing your dream home.</h1>
+                <p>Tailored Real Estate Solutions at Your Fingertips! At Royal Estates, we provide personalized
+                    services that make finding, managing, and investing in real estate seamless. From market
+                    analysis to property management, our expert team is dedicated to ensuring you achieve your
+                    investment goals with confidence and ease.</p>
+                <div class="hero-buttons">
+                    <a href="" class="btn btn-primary"><button>Learn More!</button></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section__title">What People Say <strong>about us...</strong></h2>
+                <div class="testimonials__grid">
+                    <div class="testimonial__card">
+                        <img src="https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Dr. John Doe" class="author-image">
+                        <h3 class="testimonial__author">Dr. John Doe</h3>
+                        <p class="testimonial__text">Cardiologist</p>
+                    </div>
+                    <div class="testimonial__card">
+                        <img src="https://img.freepik.com/free-photo/front-view-young-beautiful-woman-smiling_23-2148353597.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="Jane Smith" class="author-image">
+                        <h3 class="testimonial__author">Jane Wangui</h3>
+                        <p class="testimonial__text">Dermatologist</p>
+                    </div>
+                    <div class="testimonial__card">
+                        <img src="https://img.freepik.com/free-photo/young-man-smiling-standing-cliff-near-beautiful-sea_181624-23716.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
+                            alt="Brian Kombo" class="author-image">
+                        <h3 class="testimonial__author">Brian Kombo</h3>
+                        <p class="testimonial__text">Dermatologist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections as per your structure... -->
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-section">
+                    <h3>Royal Estates</h3>
+                    <p>Your trusted partner in real estate.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Property Sales</li>
+                        <li>Rentals</li>
+                        <li>Property Management</li>
+                        <li>Market Analysis</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
+                        <li>Our Story</li>
+                        <li>Team</li>
+                        <li>Careers</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>User</h3>
+                    <ul>
+                        <li>Login</li>
+                        <li>Register</li>
+                        <li>My Account</li>
+                        <li>Help Center</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // JavaScript for dynamic counters
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate statistics on page load
+        window.onload = function () {
+            const statItems = document.querySelectorAll('.stat-item h3');
+            animateValue(statItems[0], 0, 30, 2000);
+            animateValue(statItems[1], 0, 1000, 2000);
+            animateValue(statItems[2], 0, 1200, 2000);
+            animateValue(statItems[3], 0, 850, 2000);
+        };
+    </script>
+</body>
+
+</html>
