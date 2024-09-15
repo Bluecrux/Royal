@@ -1,2 +1,0 @@
-# Royal
-A new project
