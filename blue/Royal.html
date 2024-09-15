@@ -7,7 +7,6 @@
     <title>Royal Estates</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
-        /* CSS styles will be added here */
         body,
         html {
             margin: 0;
@@ -301,9 +300,6 @@
             color: #555;
         }
 
-
-        /* Add more styles for other sections... */
-
         footer {
             background-color: #0056b3;
             color: white;
@@ -324,7 +320,7 @@
             margin-right: 1rem;
         }
 
-        /*@media (max-width: 1024px) {
+        @media (max-width: 1024px) {
 
             .service-item,
             .b-item {
@@ -360,7 +356,7 @@
             .b-item {
                 flex-basis: 100%;
             }
-        }*/
+        }
     </style>
 </head>
 
@@ -582,25 +578,23 @@
                         <img src="https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg?auto=compress&cs=tinysrgb&w=600"
                             alt="Dr. John Doe" class="author-image">
                         <h3 class="testimonial__author">Dr. John Doe</h3>
-                        <p class="testimonial__text">Cardiologist</p>
+                        <p class="testimonial__text">Royal Estates made everything so easy. They guided me through every step, and I ended up making a great investment.</p>
                     </div>
                     <div class="testimonial__card">
                         <img src="https://img.freepik.com/free-photo/front-view-young-beautiful-woman-smiling_23-2148353597.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
                             alt="Jane Smith" class="author-image">
                         <h3 class="testimonial__author">Jane Wangui</h3>
-                        <p class="testimonial__text">Dermatologist</p>
+                        <p class="testimonial__text">I just found my dream home through Royal Estates, and I couldn’t be happier with how seamless the process was!</p>
                     </div>
                     <div class="testimonial__card">
                         <img src="https://img.freepik.com/free-photo/young-man-smiling-standing-cliff-near-beautiful-sea_181624-23716.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
                             alt="Brian Kombo" class="author-image">
                         <h3 class="testimonial__author">Brian Kombo</h3>
-                        <p class="testimonial__text">Dermatologist</p>
+                        <p class="testimonial__text">Finding the perfect property was effortless with Royal Estates. I highly recommend them to anyone looking for a trustworthy real estate partner.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Add more sections as per your structure... -->
 
         <footer>
             <div class="container footer-content">
@@ -646,7 +640,6 @@
     </main>
 
     <script>
-        // JavaScript for dynamic counters
         function animateValue(obj, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
@@ -660,7 +653,6 @@
             window.requestAnimationFrame(step);
         }
 
-        // Animate statistics on page load
         window.onload = function () {
             const statItems = document.querySelectorAll('.stat-item h3');
             animateValue(statItems[0], 0, 30, 2000);
