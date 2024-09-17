@@ -151,11 +151,30 @@
             height: auto;
         }
 
-        .end {
-            
-            text-align: left;
+        .heroreverse-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
+        .heroreverse-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .flexbox .heroreverse-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .flexbox .heroreverse-image {
+            flex: 1;
+        }
+
+        .flexbox .heroreverse-text {
+            flex: 1;
+        }
 
         /* Statistics section styles */
 
@@ -320,7 +339,7 @@
             margin-right: 1rem;
         }
 
-        @media (max-width: 1024px) {
+        /*@media (max-width: 1024px) {
 
             .service-item,
             .b-item {
@@ -356,7 +375,7 @@
             .b-item {
                 flex-basis: 100%;
             }
-        }
+        } */
     </style>
 </head>
 
@@ -551,7 +570,7 @@
         </section>
 
         <section class="heroreverse" id="heroreverse"></section>
-        <div class="container">
+        <div class="container flexbox">
             <div class="heroreverse-content">
                 <div class="heroreverse-image">
                     <img src="https://img.freepik.com/free-photo/side-view-young-friends-traveling-together_23-2150598887.jpg?ga=GA1.1.1974136662.1726076769&semt=ais_hybrid"
